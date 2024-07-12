@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <include name="common.xml"/>+
+
+  <remote fetch="https://github.com/agherzan"      name="rpi"/>
+  <remote fetch="https://github.com/sbabic"        name="sbabic"/>
+  <remote fetch="https://github.com/varigit"       name="variscite"/>
+  <remote fetch="https://github.com/githubics" name="ics"/>
+
+  # RPi BSP
+  <project remote="rpi"       revision="d7544f35756d87834e8b4bf3e3e733c771d380ae" upstream="kirkstone"   name="meta-raspberrypi"        path="sources/meta-raspberrypi"/>
+  <project remote="sbabic"    revision="965bcd8da5ad2174bd2ac05811580e44bbb0e036" upstream="kirkstone"   name="meta-swupdate-boards"    path="sources/meta-swupdate-boards"/>
+
+  # Variscite BSP.
+  <project remote="variscite" revision="0fd2cb428a54925f74b21a340274249781f53efa" name="variscite-bsp-base" path="sources/base">
+    <linkfile dest="README" src="README"/>
+    <linkfile dest="setup-environment" src="setup-environment"/>
+  </project>
+  <project remote="variscite" revision="7784b74fe02331175fbb11ac7e7efd50d30a5fd1" upstream="kirkstone"   name="meta-variscite-hab"      path="sources/meta-variscite-hab"/>
+  <project remote="variscite" revision="83aa4f12e0e82b19993be5fb872ae13db1095f94" upstream="kirkstone-var02"   name="meta-variscite-bsp"      path="sources/meta-variscite-bsp"/>
+  <project remote="variscite" revision="398f30f5d6b9f11d09dd3285baf5158ceb36599b" upstream="kirkstone"   name="meta-variscite-sdk"      path="sources/meta-variscite-sdk"/>
+
+  # ICS layers
+  <project remote="ics"   revision="kirkstone" name="meta-ics-flutter-edge"   path="sources/meta-ics-flutter-edge">
+    <linkfile src="scripts/ics-setup-release" dest="ics-setup-release"/>
+    <linkfile src="scripts/setup-environment" dest="setup-environment"/>
+  </project>
+
+</manifest>
